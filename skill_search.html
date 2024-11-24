@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search-container">
+    <h1>Search for Skills</h1>
+    
+    <form method="POST" class="form-container">
+        <input type="text" name="skill_name" placeholder="Enter skill to search" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if skills %}
+    <div class="skills-results">
+        <h2>Search Results:</h2>
+        <div class="skill-cards">
+            {% for skill in skills %}
+            <div class="skill-card">
+                <h3>{{ skill[1] }}</h3>
+                <p><strong>User:</strong> {{ skill[0] }}</p>
+                <p><strong>Experience:</strong> {{ skill[2] }} years</p>
+                <p><strong>Description:</strong> {{ skill[3] }}</p>
+                <p><strong>Contact:</strong> {{ skill[4] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

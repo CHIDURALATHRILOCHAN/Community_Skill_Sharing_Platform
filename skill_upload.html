@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Upload Your Skill</h1>
+    
+    <form method="POST" onsubmit="submitSkill(); return false;">
+        <label for="skill_name">Skill Name</label>
+        <input type="text" id="skill_name" name="skill_name" required>
+        
+        <label for="experience_years">Years of Experience</label>
+        <input type="number" id="experience_years" name="experience_years" required>
+        
+        <label for="description">Skill Description</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="contact_info">Contact Information</label>
+        <input type="text" id="contact_info" name="contact_info" required>
+        
+        <button type="submit">Share Skill</button>
+    </form>
+</div>
+{% endblock %}
